@@ -5,14 +5,15 @@
  * Date: 2017-11-28
  * Students: Raghuram Rangaraju (@01377909), Vihar kodakandla (@01392814)
  */
-package external;
 
-/** 
- *  External bitmap interface for displaying simple bitmaps
- */
-public interface Bitmap {
-  /** 
-   *  Shows the static bitmap
-   */
-  public void show();
+package edu.fitchburgstate.csc74002017fall.duckpond.soundbehavior;
+
+
+public class SimpleQuack implements SoundBehavior {
+
+	@Override
+	public void quack() {
+		 System.out.println("Quack");
+	}
+
 }

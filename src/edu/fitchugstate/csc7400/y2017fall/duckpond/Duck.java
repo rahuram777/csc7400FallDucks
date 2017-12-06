@@ -2,87 +2,109 @@
  * Class: Object-Oriented Design and Analysis
  * Professor: Orlando Montalvo
  * Assignment: HW 9
- * 
  * Date: 2017-11-28
+ * Students: Raghuram Rangaraju (@01377909), Vihar kodakandla (@01392814)
  */
 package edu.fitchugstate.csc7400.y2017fall.duckpond;
 
+import edu.fitchburgstate.csc74002017fall.duckpond.flybehavior.FlyBehavior;
+import edu.fitchburgstate.csc74002017fall.duckpond.soundbehavior.SoundBehavior;
+import edu.fitchburgstate.csc74002017fall.duckpond.swimbehavior.SwimBehavior;
 import external.GIF;
 import external.Bitmap;
 import external.BitmapImpl;
 import external.GifImpl;
 
-/** 
- *  Base duck class that will be used for ducks on the pond
+/**
+ * Base duck class that will be used for ducks on the pond
  */
 public class Duck implements DuckType {
-  /** 
-   *  Creates a duck object given the files that will be used for displaying and animating
-   *  
-   * @param bitmapFilname the still bitmap file name of the duck
-   * @param flyingGifFilename the flying GIF file name
-   * @param swimmingGifFilename the swimming GIF file name
-   */
-  public Duck(String bitmapFilename, String flyingGifFilename, String swimmingGifFilename) {
-    this.still = this.createBitmap(bitmapFilename);
-    this.flying = this.createGif(flyingGifFilename);
-    this.swimming = this.createGif(swimmingGifFilename);
-  }
+	/**
+	 * Creates a duck object given the files that will be used for displaying and
+	 * animating
+	 * 
+	 * @param bitmapFilname
+	 *          the still bitmap file name of the duck
+	 * @param flyingGifFilename
+	 *          the flying GIF file name
+	 * @param swimmingGifFilename
+	 *          the swimming GIF file name
+	 */
 
-  /** 
-   *  Displays a still of the duck using bitmap
-   */
-  public void display() {
-    this.still.show();
-  }
+	public Duck(Bitmap still, GIF flying, GIF swimming) {
+		this.still = still;
+		this.flying = flying;
+		this.swimming = swimming;
+	}
 
-  /** 
-   *  Displays a flying animation using the GIF file.
-   */
-  public void fly() {
-    this.flying.animate();
-  }
+	/**
+	 * Displays a still of the duck using bitmap
+	 */
+	public void display() {
+		this.still.show();
+	}
 
-  /** 
-   *  Makes a quacking sound
-   */
-  public void quack() {
-    System.out.println("Quack");
-  }
+	/**
+	 * Sets the fly behavior of duck
+	 */
+	public void setFlyBehavior(FlyBehavior flyBehavior) {
+		this.flyBehavior = flyBehavior;
 
-  /** 
-   *  Shows a swimming animation using the GIF file
-   */
-  public void swim() {
-    this.swimming.animate();
-  }
+	}
 
-  /** 
-   *  Creates a new bitmap object given a file name
-   */
-  protected Bitmap createBitmap(String fileName) {
-    return new BitmapImpl(fileName);
-  }
+	/**
+	 * Sets the sound behavior of duck
+	 */
+	public void setSoundBehavior(SoundBehavior soundBehavior) {
+		this.soundBehavior = soundBehavior;
+	}
 
-  /** 
-   *  Creates a GIF object given a file name.e
-   */
-  protected GIF createGif(String fileName) {
-    return new GifImpl(fileName);
-  }
+	/**
+	 * Sets the swimming behavior of duck
+	 */
+	public void setSwimBehavior(SwimBehavior swimBehavior) {
+		this.swimBehavior = swimBehavior;
+	}
 
-  /** 
-   *  For displaying a still duck image, used when adding ducks to the pond.
-   */
-  protected Bitmap still;
+	/**
+	 * Displays a flying animation using the GIF file.
+	 */
+	public void fly() {
+		flyBehavior.fly(this.flying);
+	}
 
-  /** 
-   *  GIF of duck flying
-   */
-  protected GIF flying;
+	/**
+	 * Makes a quacking sound
+	 */
+	public void quack() {
+		soundBehavior.quack();
+	}
 
-  /** 
-   *  GIF of duck swimming
-   */
-  protected GIF swimming;
+	/**
+	 * Shows a swimming animation using the GIF file
+	 */
+	public void swim() {
+		swimBehavior.swim(this.swimming);
+	}
+
+	/**
+	 * For displaying a still duck image, used when adding ducks to the pond.
+	 */
+	protected Bitmap still;
+
+	/**
+	 * GIF of duck flying
+	 */
+	protected GIF flying;
+
+	/**
+	 * GIF of duck swimming
+	 */
+	protected GIF swimming;
+
+	protected FlyBehavior flyBehavior;
+
+	protected SoundBehavior soundBehavior;
+
+	protected SwimBehavior swimBehavior;
 }
