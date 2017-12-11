@@ -21,7 +21,7 @@ public class WoodenDecoy extends Duck {
 	 */
 	public WoodenDecoy() {
 
-		super(BitMapFactory.createBitmap("decoy_still.bmp"), GIFFactory.createGif(null), GIFFactory.createGif("decoy_swim.gif"));
+		super(BehaviorFactory.createBitmap("decoy_still.bmp"), BehaviorFactory.createGif(null), BehaviorFactory.createGif("decoy_swim.gif"));
 
 		setFlyBehavior(new NoFly());
 		setSoundBehavior(new Silent());

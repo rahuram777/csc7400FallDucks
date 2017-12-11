@@ -21,7 +21,7 @@ public class RubberDuck extends Duck {
 	 */
 	public RubberDuck() {
 		
-		super(BitMapFactory.createBitmap("rubber_duck_still.bmp"), GIFFactory.createGif(null), GIFFactory.createGif("rubber_duck_swim.gif"));
+		super(BehaviorFactory.createBitmap("rubber_duck_still.bmp"), BehaviorFactory.createGif(null), BehaviorFactory.createGif("rubber_duck_swim.gif"));
 		
 		setFlyBehavior(new NoFly());
 		setSoundBehavior(new Squek());

@@ -21,7 +21,7 @@ public class Redhead extends Duck {
    */
   public Redhead() {
 	
-	super(BitMapFactory.createBitmap("redhead_still.bmp"), GIFFactory.createGif("redhead_fly.gif"), GIFFactory.createGif("redhead_swim.gif"));
+	super(BehaviorFactory.createBitmap("redhead_still.bmp"), BehaviorFactory.createGif("redhead_fly.gif"), BehaviorFactory.createGif("redhead_swim.gif"));
 	setFlyBehavior(new SimpleFly());
 	setSoundBehavior(new SimpleQuack());
 	setSwimBehavior(new SimpleSwim());

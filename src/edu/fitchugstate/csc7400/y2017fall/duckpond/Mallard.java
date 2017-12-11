@@ -20,7 +20,7 @@ public class Mallard extends Duck {
 	 * Creates a new Mallard duck with appropriate bitmaps and GIFs
 	 */
 	public Mallard() {
-		super(BitMapFactory.createBitmap("mallard_still.bmp"), GIFFactory.createGif("mallard_fly.gif"), GIFFactory.createGif("mallad_swim.gif"));
+		super(BehaviorFactory.createBitmap("mallard_still.bmp"), BehaviorFactory.createGif("mallard_fly.gif"), BehaviorFactory.createGif("mallad_swim.gif"));
 		
 		setFlyBehavior(new SimpleFly());
 		setSoundBehavior(new SimpleQuack());
