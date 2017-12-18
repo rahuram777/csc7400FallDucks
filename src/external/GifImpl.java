@@ -2,8 +2,8 @@
  * Class: Object-Oriented Design and Analysis
  * Professor: Orlando Montalvo
  * Assignment: HW 9
- * 
  * Date: 2017-11-28
+ * Students: Raghuram Rangaraju (@01377909), Vihar kodakandla (@01392814)
  */
 package external;
 
@@ -24,7 +24,6 @@ public class GifImpl implements GIF {
    */
   public void animate() {
   	System.out.println("Animating GIF " + this.fileName);
-
   }
 
   /** 

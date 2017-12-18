@@ -7,6 +7,7 @@
  */
 package edu.fitchugstate.csc7400.y2017fall.duckpond;
 
+
 /** 
  *  Redhead duck for pond
  */
@@ -16,6 +17,6 @@ public class Redhead extends Duck {
    *  Creates new redhead duck with appropriate bitmaps and GIFs.
    */
   public Redhead() {
-	super("redhead_still.bmp", "redhead_fly.gif", "redhead_swim.gif");
+  	super("redhead_still.bmp", "redhead_fly.gif","redhead_swim.gif");
   }
 }
