@@ -7,7 +7,7 @@
  */
 package edu.fitchugstate.csc7400.y2017fall.duckpond;
 
-import edu.fitchburgstate.csc74002017fall.duckpond.flybehavior.FlyBehavior;
+import edu.fitchburgstate.csc74002017fall.duckpond.flybehavior.Flybehavior;
 import edu.fitchburgstate.csc74002017fall.duckpond.quackbehavior.QuackBehavior;
 import edu.fitchburgstate.csc74002017fall.duckpond.swimbehavior.SwimBehavior;
 import external.GIF;
@@ -47,8 +47,8 @@ public class Duck implements DuckType {
 	/**
 	 * Sets the fly behavior of duck
 	 */
-	public void setFlyBehavior(FlyBehavior flyBehavior) {
-		this.flyBehavior = flyBehavior;
+	public void setFlyBehavior(Flybehavior flybehavior) {
+		this.flybehavior = flybehavior;
 
 	}
 
@@ -70,7 +70,7 @@ public class Duck implements DuckType {
 	 * Displays a flying animation using the GIF file.
 	 */
 	public void fly() {
-		flyBehavior.fly(this.flying);
+		flybehavior.Fly(this.flying);
 	}
 
 	/**
@@ -102,7 +102,7 @@ public class Duck implements DuckType {
 	 */
 	protected GIF swimming;
 
-	protected FlyBehavior flyBehavior;
+	protected Flybehavior flybehavior;
 
 	protected QuackBehavior quackBehavior;
 

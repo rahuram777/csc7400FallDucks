@@ -7,7 +7,7 @@
  */
 package edu.fitchburgstate.csc74002017fall.duckpond.behaviorfactories;
 
-import edu.fitchburgstate.csc74002017fall.duckpond.flybehavior.FlyBehavior;
+import edu.fitchburgstate.csc74002017fall.duckpond.flybehavior.Flybehavior;
 import edu.fitchburgstate.csc74002017fall.duckpond.flybehavior.*;
 
 
@@ -17,18 +17,18 @@ public class FlyFactory implements FlyBehaviorFactory {
 	 * @return object SimpleFly
 	 */
 	@Override
-	public FlyBehavior CreateFlyWithWings() {
+	public Flybehavior CreateFlyWithWings() {
 		// TODO Auto-generated method stub
-		return new SimpleFly();
+		return new Fly();
 	}
 
 	/**
 	 * @return object NoFly
 	 */
 	@Override
-	public FlyBehavior CreateNoFly() {
+	public Flybehavior CreateNoFly() {
 		// TODO Auto-generated method stub
-		return new NoFly();
+		return new CannotFly();
 	}
 
 }

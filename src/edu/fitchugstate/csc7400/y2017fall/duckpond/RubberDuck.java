@@ -7,9 +7,6 @@
  */
 package edu.fitchugstate.csc7400.y2017fall.duckpond;
 
-import edu.fitchburgstate.csc74002017fall.duckpond.flybehavior.NoFly;
-import edu.fitchburgstate.csc74002017fall.duckpond.quackbehavior.Squeak;
-import edu.fitchburgstate.csc74002017fall.duckpond.swimbehavior.SimpleSwim;
 
 /**
  * Rubber duck for pond

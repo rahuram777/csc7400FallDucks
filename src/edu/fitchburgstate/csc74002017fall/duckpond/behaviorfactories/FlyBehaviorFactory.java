@@ -12,6 +12,6 @@ import edu.fitchburgstate.csc74002017fall.duckpond.flybehavior.*;
  * Declaring methods to create fly objects
  */
 public interface FlyBehaviorFactory {
-  public FlyBehavior CreateFlyWithWings();
-  public FlyBehavior CreateNoFly();
+  public Flybehavior CreateFlyWithWings();
+  public Flybehavior CreateNoFly();
 }
