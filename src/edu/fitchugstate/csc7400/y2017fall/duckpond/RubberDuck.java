@@ -8,7 +8,7 @@
 package edu.fitchugstate.csc7400.y2017fall.duckpond;
 
 import edu.fitchburgstate.csc74002017fall.duckpond.flybehavior.NoFly;
-import edu.fitchburgstate.csc74002017fall.duckpond.soundbehavior.Squek;
+import edu.fitchburgstate.csc74002017fall.duckpond.quackbehavior.Squeak;
 import edu.fitchburgstate.csc74002017fall.duckpond.swimbehavior.SimpleSwim;
 
 /**
@@ -20,25 +20,6 @@ public class RubberDuck extends Duck {
 	 * Creates a new rubber duck
 	 */
 	public RubberDuck() {
-		
-		super(BehaviorFactory.createBitmap("rubber_duck_still.bmp"), BehaviorFactory.createGif(null), BehaviorFactory.createGif("rubber_duck_swim.gif"));
-		
-		setFlyBehavior(new NoFly());
-		setSoundBehavior(new Squek());
-		setSwimBehavior(new SimpleSwim());
+		super("rubber_duck_still.bmp", null, "rubber_duck_swim.gif");
 	}
-
-	/**
-	 * Rubber duck don't fly
-	 */
-	// public void fly() {
-	// System.out.println("Rubber duck continues to swim");
-	// }
-
-	/**
-	 * Squeaks like a rubber duck.
-	 */
-	// public void quack() {
-	// System.out.println("Squeak");
-	// }
 }

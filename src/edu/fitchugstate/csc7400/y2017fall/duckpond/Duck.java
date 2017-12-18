@@ -8,7 +8,7 @@
 package edu.fitchugstate.csc7400.y2017fall.duckpond;
 
 import edu.fitchburgstate.csc74002017fall.duckpond.flybehavior.FlyBehavior;
-import edu.fitchburgstate.csc74002017fall.duckpond.soundbehavior.SoundBehavior;
+import edu.fitchburgstate.csc74002017fall.duckpond.quackbehavior.QuackBehavior;
 import edu.fitchburgstate.csc74002017fall.duckpond.swimbehavior.SwimBehavior;
 import external.GIF;
 import external.Bitmap;
@@ -31,10 +31,10 @@ public class Duck implements DuckType {
 	 *          the swimming GIF file name
 	 */
 
-	public Duck(Bitmap still, GIF flying, GIF swimming) {
-		this.still = still;
-		this.flying = flying;
-		this.swimming = swimming;
+	public Duck(String bitmapFilename, String flyingGifFilename, String swimmingGifFilename) {
+    this.still = BehaviorFactory.createBitmap(bitmapFilename);
+    this.flying = BehaviorFactory.createGif(flyingGifFilename);
+    this.swimming = BehaviorFactory.createGif(swimmingGifFilename);
 	}
 
 	/**
@@ -55,8 +55,8 @@ public class Duck implements DuckType {
 	/**
 	 * Sets the sound behavior of duck
 	 */
-	public void setSoundBehavior(SoundBehavior soundBehavior) {
-		this.soundBehavior = soundBehavior;
+	public void setSoundBehavior(QuackBehavior quackBehavior) {
+		this.quackBehavior = quackBehavior;
 	}
 
 	/**
@@ -77,7 +77,7 @@ public class Duck implements DuckType {
 	 * Makes a quacking sound
 	 */
 	public void quack() {
-		soundBehavior.quack();
+		quackBehavior.quack();
 	}
 
 	/**
@@ -104,7 +104,7 @@ public class Duck implements DuckType {
 
 	protected FlyBehavior flyBehavior;
 
-	protected SoundBehavior soundBehavior;
+	protected QuackBehavior quackBehavior;
 
 	protected SwimBehavior swimBehavior;
 }

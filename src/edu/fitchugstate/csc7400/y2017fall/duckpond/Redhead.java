@@ -8,7 +8,7 @@
 package edu.fitchugstate.csc7400.y2017fall.duckpond;
 
 import edu.fitchburgstate.csc74002017fall.duckpond.flybehavior.SimpleFly;
-import edu.fitchburgstate.csc74002017fall.duckpond.soundbehavior.SimpleQuack;
+import edu.fitchburgstate.csc74002017fall.duckpond.quackbehavior.SimpleQuack;
 import edu.fitchburgstate.csc74002017fall.duckpond.swimbehavior.SimpleSwim;
 
 /** 
@@ -20,10 +20,6 @@ public class Redhead extends Duck {
    *  Creates new redhead duck with appropriate bitmaps and GIFs.
    */
   public Redhead() {
-	
-	super(BehaviorFactory.createBitmap("redhead_still.bmp"), BehaviorFactory.createGif("redhead_fly.gif"), BehaviorFactory.createGif("redhead_swim.gif"));
-	setFlyBehavior(new SimpleFly());
-	setSoundBehavior(new SimpleQuack());
-	setSwimBehavior(new SimpleSwim());
+  	super("redhead_still.bmp", "redhead_fly.gif","redhead_swim.gif");
   }
 }
