@@ -12,12 +12,18 @@ import external.GIF;
 
 public class CannotFly implements Flybehavior {
 
+	public CannotFly(GIF flying){
+		this.flying = flying;
+	}
+	
 	/** 
    *  Outputs duck won't fly
    */
 	@Override
-	public void Fly(GIF flying) {
+	public void Flying() {
 		 System.out.println("The duck won't fly");
 	}
-
+	
+	protected GIF flying; 
+	
 }

@@ -7,7 +7,6 @@
  */
 package edu.fitchugstate.csc7400.y2017fall.duckpond;
 
-import edu.fitchburgstate.csc74002017fall.duckpond.behaviorfactories.*;
 /**
  * Main program that simulates a pond
  */
@@ -17,30 +16,10 @@ public class SimuPond {
 	 */
 	public static void main(String[] args) {
 		
-		FlyBehaviorFactory flyFactory = new FlyFactory();
-		QuackBehaviorFactory quackFactory = new QuackFactory();
-		SwimBehaviorFactory swimFactory = new SwimFactory();
-		
 		Duck mallardDuck = new Mallard();
 		Duck redheadDuck = new Redhead();
-		Duck rubberDuck = new RubberDuck();
-		Duck woodenDecoyDuck = new WoodenDecoy();
-	
-		mallardDuck.setFlyBehavior(flyFactory.CreateFlyWithWings());
-		mallardDuck.setSoundBehavior(quackFactory.CreateQuack());
-		mallardDuck.setSwimBehavior(swimFactory.CreateGeneralSwim());
-		
-		redheadDuck.setFlyBehavior(flyFactory.CreateFlyWithWings());
-		redheadDuck.setSoundBehavior(quackFactory.CreateQuack());
-		redheadDuck.setSwimBehavior(swimFactory.CreateGeneralSwim());
-			
-	  rubberDuck.setFlyBehavior(flyFactory.CreateNoFly());
-	  rubberDuck.setSoundBehavior(quackFactory.CreateSqueak());
-	  rubberDuck.setSwimBehavior(swimFactory.CreateGeneralSwim());
-	  
-	  woodenDecoyDuck.setFlyBehavior(flyFactory.CreateNoFly());
-	  woodenDecoyDuck.setSoundBehavior(quackFactory.CreateSilent());
-	  woodenDecoyDuck.setSwimBehavior(swimFactory.CreateGeneralSwim());
+  	Duck rubberDuck = new RubberDuck();
+	  Duck woodenDecoyDuck = new WoodenDecoy();
 	  
 		System.out.println("Adding ducks to duck pond");
 		addDuck(mallardDuck);

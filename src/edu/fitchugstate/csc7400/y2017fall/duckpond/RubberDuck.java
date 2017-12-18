@@ -8,6 +8,9 @@
 package edu.fitchugstate.csc7400.y2017fall.duckpond;
 
 
+import edu.fitchburgstate.csc74002017fall.duckpond.behaviorfactories.RubberDuckBehaviorFactory;
+
+
 /**
  * Rubber duck for pond
  */
@@ -17,6 +20,6 @@ public class RubberDuck extends Duck {
 	 * Creates a new rubber duck
 	 */
 	public RubberDuck() {
-		super("rubber_duck_still.bmp", null, "rubber_duck_swim.gif");
+		super("rubber_duck_still.bmp", new RubberDuckBehaviorFactory(null, "rubber_duck_swim.gif"));
 	}
 }

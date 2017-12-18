@@ -6,10 +6,9 @@
  * Students: Raghuram Rangaraju (@01377909), Vihar kodakandla (@01392814)
  */
 package edu.fitchburgstate.csc74002017fall.duckpond.flybehavior;
-import external.GIF;
 /** 
  *  This is a simple SwimBehavior interface used to display the flying behavior of duck
  */
 public interface Flybehavior {
-	public void Fly(GIF fly);
+	public void Flying();
 }

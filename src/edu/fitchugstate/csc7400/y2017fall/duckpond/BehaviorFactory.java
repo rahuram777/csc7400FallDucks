@@ -23,7 +23,7 @@ public class BehaviorFactory {
 	/** 
 	 *  Creates a new GIF instance
 	 */
-	protected static GIF createGif(String fileName) {
+	public static GIF createGif(String fileName) {
 		return new GifImpl(fileName);
 	}
 }

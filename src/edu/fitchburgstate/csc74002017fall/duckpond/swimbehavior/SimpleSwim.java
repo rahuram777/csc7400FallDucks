@@ -12,13 +12,16 @@ import external.GIF;
 
 public class SimpleSwim implements SwimBehavior {
 
+	public SimpleSwim(GIF swimBehavior){
+		this.swimBehavior = swimBehavior;
+	}
 	/** 
    *  Outputs a swimming animation
    */
 	@Override
-	public void swim(GIF swimBehavior ) {
-		// TODO Auto-generated method stub
+	public void swim() {
 		swimBehavior.animate();
 	}
-
+	
+	protected GIF swimBehavior;
 }

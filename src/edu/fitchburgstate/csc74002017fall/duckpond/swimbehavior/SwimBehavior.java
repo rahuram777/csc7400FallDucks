@@ -6,7 +6,6 @@
  * Students: Raghuram Rangaraju (@01377909), Vihar kodakandla (@01392814)
  */
 package edu.fitchburgstate.csc74002017fall.duckpond.swimbehavior;
-import external.GIF;
 
 /** 
  *  This is a simple SwimBehavior interface used to display the swimming of duck
@@ -15,5 +14,5 @@ public interface SwimBehavior {
 	/** 
    *  Outputs a swimming animation
    */
-	public void swim(GIF swimming);
+	public void swim();
 }

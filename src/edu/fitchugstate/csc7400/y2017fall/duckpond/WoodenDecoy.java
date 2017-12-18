@@ -7,6 +7,8 @@
  */
 package edu.fitchugstate.csc7400.y2017fall.duckpond;
 
+import edu.fitchburgstate.csc74002017fall.duckpond.behaviorfactories.DecoyBehaviorFactory;
+
 /**
  * Wooden decoys for the duck.
  */
@@ -16,6 +18,6 @@ public class WoodenDecoy extends Duck {
 	 * Creates a new wooden decoy with appropriate bitmaps and GIFs
 	 */
 	public WoodenDecoy() {
-		super("decoy_still.bmp",null, "decoy_swim.gif");
+		super("decoy_still.bmp",new DecoyBehaviorFactory(null, "decoy_swim.gif"));
 	}
 }

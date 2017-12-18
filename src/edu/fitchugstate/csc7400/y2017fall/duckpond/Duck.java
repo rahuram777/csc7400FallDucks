@@ -7,13 +7,14 @@
  */
 package edu.fitchugstate.csc7400.y2017fall.duckpond;
 
+import edu.fitchburgstate.csc74002017fall.duckpond.behaviorfactories.AbstractBehaviorFactory;
 import edu.fitchburgstate.csc74002017fall.duckpond.flybehavior.Flybehavior;
 import edu.fitchburgstate.csc74002017fall.duckpond.quackbehavior.QuackBehavior;
 import edu.fitchburgstate.csc74002017fall.duckpond.swimbehavior.SwimBehavior;
+import external.BitmapImpl;
 import external.GIF;
 import external.Bitmap;
-import external.BitmapImpl;
-import external.GifImpl;
+
 
 /**
  * Base duck class that will be used for ducks on the pond
@@ -23,18 +24,16 @@ public class Duck implements DuckType {
 	 * Creates a duck object given the files that will be used for displaying and
 	 * animating
 	 * 
-	 * @param bitmapFilname
-	 *          the still bitmap file name of the duck
-	 * @param flyingGifFilename
-	 *          the flying GIF file name
-	 * @param swimmingGifFilename
-	 *          the swimming GIF file name
+	 * @param bitmapFilname the still bitmap file name of the duck
+	 * @param flyingGifFilename the flying GIF file name
+	 * @param swimmingGifFilename the swimming GIF file name
 	 */
 
-	public Duck(String bitmapFilename, String flyingGifFilename, String swimmingGifFilename) {
-    this.still = BehaviorFactory.createBitmap(bitmapFilename);
-    this.flying = BehaviorFactory.createGif(flyingGifFilename);
-    this.swimming = BehaviorFactory.createGif(swimmingGifFilename);
+	public Duck(String bitmapFilename, AbstractBehaviorFactory factory) {
+    this.still = this.createBitmap(bitmapFilename);
+    this.flybehavior = factory.createFlyBehavior();
+    this.swimBehavior = factory.createSwimBehavior();
+    this.quackBehavior= factory.createQuackBehavior();
 	}
 
 	/**
@@ -53,24 +52,10 @@ public class Duck implements DuckType {
 	}
 
 	/**
-	 * Sets the sound behavior of duck
-	 */
-	public void setSoundBehavior(QuackBehavior quackBehavior) {
-		this.quackBehavior = quackBehavior;
-	}
-
-	/**
-	 * Sets the swimming behavior of duck
-	 */
-	public void setSwimBehavior(SwimBehavior swimBehavior) {
-		this.swimBehavior = swimBehavior;
-	}
-
-	/**
 	 * Displays a flying animation using the GIF file.
 	 */
 	public void fly() {
-		flybehavior.Fly(this.flying);
+		flybehavior.Flying();
 	}
 
 	/**
@@ -80,28 +65,20 @@ public class Duck implements DuckType {
 		quackBehavior.quack();
 	}
 
+	public Bitmap createBitmap(String fileName) {
+		return new BitmapImpl(fileName);
+	}
+	
 	/**
 	 * Shows a swimming animation using the GIF file
 	 */
 	public void swim() {
-		swimBehavior.swim(this.swimming);
+		swimBehavior.swim();
 	}
 
-	/**
-	 * For displaying a still duck image, used when adding ducks to the pond.
-	 */
+
 	protected Bitmap still;
-
-	/**
-	 * GIF of duck flying
-	 */
-	protected GIF flying;
-
-	/**
-	 * GIF of duck swimming
-	 */
-	protected GIF swimming;
-
+	
 	protected Flybehavior flybehavior;
 
 	protected QuackBehavior quackBehavior;

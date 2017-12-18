@@ -12,12 +12,18 @@ import external.GIF;
 
 public class Fly implements Flybehavior {
 
+	
+	public Fly(GIF flying){
+		this.flying = flying;
+	}
 	/** 
    *  Outputs flying animation
    */
 	@Override
-	public void Fly(GIF flying) {
+	public void Flying() {
 		flying.animate();
 	}
+	
+	protected GIF flying; 
 
 }
