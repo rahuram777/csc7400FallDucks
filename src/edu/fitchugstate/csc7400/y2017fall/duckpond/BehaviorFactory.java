@@ -7,14 +7,11 @@
  */
 
 package edu.fitchugstate.csc7400.y2017fall.duckpond;
-
 import external.Bitmap;
 import external.BitmapImpl;
 import external.GIF;
 import external.GifImpl;
-
 public class BehaviorFactory {
-
 	/** 
 	 *  Creates a new Bitmap instance
 	 */
